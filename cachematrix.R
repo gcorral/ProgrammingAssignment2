@@ -26,6 +26,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
  ## Return a matrix that is the inverse of 'x'
+  if(!is.recursive(x)){
+    message("argument is not recursive")
+    return(x)
+  }
   
   inv <- x$getinv()
   if(!is.null(inv)) {
